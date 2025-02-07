@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .slide {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            background-color: #ff4081;
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide active">
+        <h1>Slide 1: You're Special! ❤️</h1>
+        <p>From the first time I met you, I knew you were different. You make my world brighter! ✨</p>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <div class="slide">
+        <h1>Slide 2: The Best Thing About You! 😊</h1>
+        <p>Your smile, your kindness, and your heart make you the most beautiful person I know. 💕</p>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <div class="slide">
+        <h1>Slide 3: A Little Proposal... 💍</h1>
+        <p>I don’t just want to ask you out, I want your consent. If you say yes, I’ll be the happiest. But if no, our friendship will remain just as strong. 💖</p>
+        <button onclick="nextSlide()">Next</button>
+    </div>
+
+    <div class="slide">
+        <h1>Slide 4: Your Answer? 🤍</h1>
+        <p>Take your time, and choose what you feel is right. No matter what, you're special to me.</p>
+        <button onclick="window.location.href='yes.html'">Yes ❤️</button>
+        <button onclick="window.location.href='no.html'">No 😔</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        function nextSlide() {
+            let slides = document.querySelectorAll('.slide');
+            slides[currentSlide].classList.remove('active');
+            currentSlide++;
+            if (currentSlide < slides.length) {
+                slides[currentSlide].classList.add('active');
+            }
+        }
+    </script>
+
+</body>
+</html>

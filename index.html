@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Date?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffcccc;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            color: #d63384;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff4081;
+            color: white;
+            border-radius: 10px;
+        }
+        .no {
+            background-color: #999;
+            color: white;
+            border-radius: 10px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you be my date? ❤️</h1>
+    <div class="buttons">
+        <button class="yes" onclick="window.location.href='slides.html'">Yes</button>
+        <button class="no" onmouseover="moveNoButton()" onclick="moveNoButton()">No</button>
+    </div>
+
+    <script>
+        function moveNoButton() {
+            const noButton = document.querySelector('.no');
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 100);
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+    </script>
+
+</body>
+</html>
